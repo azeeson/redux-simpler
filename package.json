@@ -5,9 +5,10 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+      "prebuild": "rimraf ./lib/**",
     "build": "tsc",
-    "prepushPatch": "npm run build",
-    "pushPatch": "npm version --no-commit-hooks patch && git push && npm publish"
+    "prepub": "npm run build",
+    "pub": "npm version --no-commit-hooks patch && git push && npm publish"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/azeeson/redux-simpler#readme",
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
